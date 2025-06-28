@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function App() {
+ export function App() {
 
     const[checked, setChecked] = useState({
         html:false,
@@ -59,4 +59,64 @@ function App() {
     );
 }
 
-export default App;
+
+
+ export function App2() {
+  const [checked, setChecked] = useState([]);
+
+  const handleCheckboxChange = (e) => {
+    const value = e.target.value;
+    const isChecked = e.target.checked;
+
+    if (isChecked) {
+      setChecked([...checked, value]);
+    } else {
+      setChecked(checked.filter((item) => item !== value));
+    }
+
+    console.log("Checked List:", checked);
+  };
+
+  return (
+    <div>
+      <h1>Checkbox Example</h1>
+
+      <label>
+        <input
+          type="checkbox"
+          value="html"
+          checked={checked.includes("html")}
+          onChange={handleCheckboxChange}
+        />
+        HTML
+      </label>
+      <br />
+      <label>
+        <input
+          type="checkbox"
+          value="css"
+          checked={checked.includes("css")}
+          onChange={handleCheckboxChange}
+        />
+        CSS
+      </label>
+      <br />
+      <label>
+        <input
+          type="checkbox"
+          value="js"
+          checked={checked.includes("js")}
+          onChange={handleCheckboxChange}
+        />
+        JS
+      </label>
+
+      <h2>Display checked values:</h2>
+      <ul>
+        {checked.map((item) => (
+          <li key={item}>{item.toUpperCase()} is checked</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
