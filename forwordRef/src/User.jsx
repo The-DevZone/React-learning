@@ -4,8 +4,6 @@ import { Ref } from 'react'
 const User = (props) => {
 
     console.log(props.ref)
-    //  return false
-
     return (
         <>
             <input type="text" ref={props.ref} />
