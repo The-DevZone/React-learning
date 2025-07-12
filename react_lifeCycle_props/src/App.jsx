@@ -12,10 +12,10 @@ const App = () => {
         <LifeCycleProps  count={count} data={data} />
       </div>
       <button onClick={() => setCount(count + 1)}> count </button>
-      <button onClick={() => setData(data + 1)}>  data  </button>
+      <button onClick={() => setData(data + 1)}>   data  </button>
     </>
   )
-  
+
 }
 
 export default App

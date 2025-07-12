@@ -1,6 +1,11 @@
 import { useRef } from "react"
 import User from "./User";
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
+// import home from "./Home";
+// import about from "./About"
+// import course from "./Course"
+// import user from "./User"
+
 
 function App() {
 
@@ -25,6 +30,12 @@ function App() {
     <>
       <User handalClick={handalClick} ref={forwordRef} />
       <button onClick={handalClick}>Click Me</button>
+      <button  >  <Link to="/home"> Home</Link></button>
+      <button  >  <Link to="/course"> Course</Link></button>
+      <button  >  <Link to="/user"> User</Link></button>
+      <button  >  <Link to="/about"> About</Link></button>
+
+
       <Outlet />
 
     </>
